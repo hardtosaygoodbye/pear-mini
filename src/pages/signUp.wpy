@@ -1,0 +1,77 @@
+<style>
+  .username-input {
+    margin-top: 80px;
+  }
+</style>
+
+<template>
+  <view class="container">
+    <input class="username-input" placeholder="用户名" @input="onUserNameInput"/>
+    <view class="split-line"></view>
+    <input placeholder="密码" @input="onPasswordInput"/>
+    <view class="split-line"></view>
+    <input placeholder="重复密码" @input="onRepeatPasswordInput"/>
+    <view class="split-line"></view>
+    <button @tap="onSignUp">注册</button>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SignUp extends wepy.page {
+    config = {
+      navigationBarTitleText: '新用户注册'
+    }
+
+    data = {
+      username: '',
+      password: '',
+      repeatPassword: ''
+    }
+
+    methods = {
+      onUserNameInput(e) {
+        this.username = e.detail.value
+      },
+      onPasswordInput(e) {
+        this.password = e.detail.value
+      },
+      onRepeatPasswordInput(e) {
+        this.repeatPassword = e.detail.value
+      },
+      async onSignUp() {
+        if (this.password !== this.repeatPassword) {
+          wx.showToast({
+            title: '密码不一致',
+            icon: 'none'
+          })
+          return
+        }
+        let res = await wepy.request({
+          url: 'http://lovehyh.swiftwhale.cn/api/v1/user/login/',
+          method: 'POST',
+          data: {
+            username: this.username,
+            password: this.password
+          }
+        })
+        if (res.statusCode !== 200) {
+          wx.showToast({
+            title: res.data.detail,
+            icon: 'none'
+          })
+          return
+        }
+        wx.showToast({
+          title: '注册成功',
+          icon: 'none'
+        })
+        wx.setStorageSync({
+          key: 'token',
+          data: res.data.token
+        })
+      }
+    }
+  }
+</script>

@@ -1,0 +1,49 @@
+<style>
+
+</style>
+
+<template>
+  <view class="container">
+    <repeat for="{{hospitalList}}">
+      <view class="cell" @tap="onCell({{index}})">{{item.name}}</view>
+    </repeat>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Hospital extends wepy.page {
+    config = {
+      navigationBarTitleText: '医院列表'
+    }
+
+    data = {
+      hospitalList: []
+    }
+
+    async onLoad() {
+      let res = await wepy.request({
+        url: 'http://lovehyh.swiftwhale.cn/api/v1/user/hospital/'
+      })
+      console.log(res)
+      if (res.statusCode !== 200) {
+        wx.showToast({
+          title: res.data.detail
+        })
+        return
+      }
+      this.hospitalList = res.data.hospitals
+      this.$apply()
+    }
+
+    methods = {
+      onCell(index) {
+        wx.navigateTo({
+          url: 'carer?hospital_id=' + this.hospitalList[index].id
+        })
+      }
+    }
+  }
+
+</script>

@@ -1,0 +1,62 @@
+<style>
+  .suggestion-input {
+    background-color: #cccccc;
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+  }
+  .suggestion-tips {
+    font-size: 14px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+  }
+</style>
+
+<template>
+  <view class="container">
+    <textarea class="suggestion-input" @input="onSuggestionInput"/>
+    <button @tap="onReport">反馈问题</button>
+    <view class="suggestion-tips">Tips:在这里你可以提出对本系统的改进意见，本系统会认真地接受用户的反馈意见并加以改进。谢谢使用</view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Suggestion extends wepy.page {
+    config = {
+      navigationBarTitleText: '反馈意见'
+    }
+    data = {
+      msg: ''
+
+    }
+    methods = {
+      onSuggestionInput(e) {
+        this.msg = e.detail.value
+      },
+      async onReport() {
+        const token = wx.getStorageSync('token')
+        console.log(token)
+        console.log(this.msg)
+        let res = await wepy.request({
+          url: 'http://lovehyh.swiftwhale.cn/api/v1/user/suggestion/',
+          method: 'POST',
+          data: {
+            token: token,
+            msg: this.msg
+          }
+        })
+        wx.showToast({
+          title: res.data.detail
+        })
+      }
+    }
+    onLoad() {
+      const token = wx.getStorageSync('token')
+      console.log(token)
+    }
+  }
+
+</script>

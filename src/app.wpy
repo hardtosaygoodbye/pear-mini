@@ -1,0 +1,109 @@
+<style lang="less">
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  input {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 200px;
+    margin-top: 10px;
+  }
+
+  .split-line {
+    background-color: #cccccc;
+    height: 1px;
+    width: 200px;
+  }
+
+  button {
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    background-color: #007dfa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
+  }
+
+  .cell {
+    width: 100%;
+    padding-left: 30px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+</style>
+
+<script>
+  import wepy from 'wepy'
+  import 'wepy-async-function'
+
+  export default class extends wepy.app {
+    config = {
+      pages: [
+        'pages/login',
+        'pages/suggestion',
+        'pages/hospital',
+        'pages/signUp',
+        'pages/carer',
+        'pages/index'
+      ],
+      window: {
+        backgroundTextStyle: 'light',
+        navigationBarBackgroundColor: '#fff',
+        navigationBarTitleText: 'WeChat',
+        navigationBarTextStyle: 'black'
+      }
+    }
+
+    globalData = {
+      userInfo: null
+    }
+
+    constructor() {
+      super()
+      this.use('requestfix')
+      this.use('promisify')
+    }
+
+    onLaunch() {
+      this.testAsync()
+    }
+
+    sleep(s) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('promise resolved')
+        }, s * 1000)
+      })
+    }
+
+    async testAsync() {
+      const data = await this.sleep(3)
+      console.log(data)
+    }
+
+    getUserInfo(cb) {
+      const that = this
+      if (this.globalData.userInfo) {
+        return this.globalData.userInfo
+      }
+      wepy.getUserInfo({
+        success(res) {
+          that.globalData.userInfo = res.userInfo
+          cb && cb(res.userInfo)
+        }
+      })
+    }
+  }
+</script>

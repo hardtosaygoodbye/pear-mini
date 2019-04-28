@@ -1,0 +1,40 @@
+<style>
+
+</style>
+<template>
+  <view class="container">
+    <repeat for="{{carerList}}">
+      <view class="cell">{{item.name}}</view>
+    </repeat>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class Carer extends wepy.page {
+    config = {
+      navigationBarTitleText: '护工列表'
+    }
+    data = {
+      carerList: []
+    }
+
+    async onLoad(option) {
+      const hospitalId = option.hospital_id
+      let res = await wepy.request({
+        url: 'http://lovehyh.swiftwhale.cn/api/v1/user/carer/',
+        data: {
+          hospital_id: hospitalId
+        }
+      })
+      if (res.statusCode !== 200) {
+        wx.showToast({
+          title: res.data.detail
+        })
+        return
+      }
+      this.carerList = res.data.carers
+      this.$apply()
+    }
+  }
+</script>
