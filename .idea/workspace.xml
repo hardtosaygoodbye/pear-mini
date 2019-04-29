@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f35ed916-8ba3-4577-ad6a-dce8a29d1774" name="Default Changelist" comment="" />
+    <list default="true" id="f35ed916-8ba3-4577-ad6a-dce8a29d1774" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/home_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/user_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/commit.wpy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/mine.wpy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/resetPassword.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/carer.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/carer.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/hospital.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/hospital.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/signUp.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/signUp.wpy" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -12,12 +26,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/index.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="1311">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="e#2040#2063#0" expanded="true" />
               </folding>
@@ -30,11 +44,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/login.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
-              <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
+            <state relative-caret-position="378">
+              <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -42,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/signUp.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+            <state relative-caret-position="893">
+              <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -51,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/hospital.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+            <state relative-caret-position="836">
+              <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -60,26 +74,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/carer.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/suggestion.wpy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            <state relative-caret-position="741">
+              <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wepy.config.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/commit.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+            <state relative-caret-position="728">
+              <caret line="248" column="5" selection-start-line="248" selection-start-column="5" selection-end-line="248" selection-end-column="5" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#view#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/resetPassword.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1197">
+              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/mine.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="969">
+              <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -87,18 +113,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
-              <folding>
-                <element signature="e#196#219#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1064">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/pages/login.js">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -112,26 +130,22 @@
         <option value="$PROJECT_DIR$/src/pages/index.wpy" />
         <option value="$PROJECT_DIR$/wepy.config.js" />
         <option value="$PROJECT_DIR$/src/pages/signIn.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/suggestion.wpy" />
         <option value="$PROJECT_DIR$/src/pages/hospital.wpy" />
         <option value="$PROJECT_DIR$/src/pages/carer.wpy" />
-        <option value="$PROJECT_DIR$/src/pages/signUp.wpy" />
         <option value="$PROJECT_DIR$/src/app.wpy" />
-        <option value="$PROJECT_DIR$/src/pages/suggestion.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/resetPassword.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/mine.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/signUp.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/commit.wpy" />
         <option value="$PROJECT_DIR$/src/pages/login.wpy" />
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="193" />
-    <option name="y" value="23" />
-    <option name="width" value="1376" />
+    <option name="x" value="297" />
+    <option name="y" value="180" />
+    <option name="width" value="1632" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -140,6 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,16 +171,22 @@
               <item name="pear-mini" type="b2602c69:ProjectViewProjectNode" />
               <item name="pear-mini" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pear-mini" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pear-mini" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -175,6 +196,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -199,24 +225,24 @@
       <option name="presentableId" value="Default" />
       <updated>1556419045015</updated>
       <workItem from="1556419048140" duration="18730000" />
+      <workItem from="1556498152812" duration="14837000" />
+      <workItem from="1556519417690" duration="211000" />
+      <workItem from="1556519737045" duration="356000" />
+      <workItem from="1556520259488" duration="323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18730000" />
+    <option name="totallyTimeSpent" value="34457000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="193" y="23" width="1376" height="1057" extended-state="0" />
+    <frame x="297" y="180" width="1632" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20442805" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17194289" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -224,6 +250,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -233,78 +263,97 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/pages/signIn.wpy" />
     <entry file="file://$PROJECT_DIR$/wepy.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
+        <state relative-caret-position="1064">
           <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/signIn.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.editorconfig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/pages/login.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/pages/carer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/start.png" />
+    <entry file="file://$PROJECT_DIR$/src/pages/suggestion.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/index.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="1311">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#2040#2063#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/carer.wpy">
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/signUp.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="893">
+          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/hospital.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+        <state relative-caret-position="836">
+          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/signUp.wpy">
+    <entry file="file://$PROJECT_DIR$/src/pages/carer.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+        <state relative-caret-position="741">
+          <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/resetPassword.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/mine.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+        <state relative-caret-position="1064">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/commit.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="248" column="5" selection-start-line="248" selection-start-column="5" selection-end-line="248" selection-end-column="5" />
           <folding>
-            <element signature="e#196#219#0" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#view#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/login.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/suggestion.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="378">
+          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,252 @@
+<style>
+  .commit-cell {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .question {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .commit-title {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .commit-title text {
+    margin-left: 30px;
+  }
+
+  .choose-side {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .choose-side-btn {
+    display: flex;
+    margin-top: 0px;
+    flex: 1;
+    width: 0;
+    background-color: #cccccc;
+  }
+
+  .selected {
+    background-color: #007dfa;
+  }
+
+  .tips-input {
+    background-color: #cccccc;
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+  .star-full {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat; /** 不重复*/
+    background-size: contain;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAYAAAARfGZ1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzA5RTU0MzUyNEREMTFFM0IxNzdGRTI1Q0UyNTAwMzAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzA5RTU0MzYyNEREMTFFM0IxNzdGRTI1Q0UyNTAwMzAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDMDlFNTQzMzI0REQxMUUzQjE3N0ZFMjVDRTI1MDAzMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDMDlFNTQzNDI0REQxMUUzQjE3N0ZFMjVDRTI1MDAzMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Phk5NKgAAAB4SURBVHja5JVBDsAgCATl/7/tB6a9NDFRKQrENiXx5g5m2YhwlJniOmK9LG+BU+s+A6en/TccTb8VTkmq++UZDaS2JbKB9DwnCjwaKBFgLS14wU9RxAPeBk+1JQ2OQcxqWqw/IF64ZeNghU+vMk03gsvCQBvtKcAAYtdLsETRj5EAAAAASUVORK5CYII=');
+  }
+
+  .star-half {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat; /** 不重复*/
+    background-size: contain;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAYAAAARfGZ1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzNCOTMxOUMyNERFMTFFM0FERjdFNDMyNTg0Qzc3MTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzNCOTMxOUQyNERFMTFFM0FERjdFNDMyNTg0Qzc3MTYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozM0I5MzE5QTI0REUxMUUzQURGN0U0MzI1ODRDNzcxNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozM0I5MzE5QjI0REUxMUUzQURGN0U0MzI1ODRDNzcxNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pt+pLK8AAACdSURBVHjazJVRCoAgEER3wt+OEkT3P0NEfXaLLjAV1J/pamsp+KHI+NydQXCTlMFjQnsYtYifwjKts2gvaKTgaFKoA+t6yYuJM3H/G3KnbU4Ovbs8S2vqfuhwlwXG2vAlNPqCK6FRYV9DYUEccgsshENWxFvh3xJKC78XJfd9FgzWtaVM48Jct2gaBgtyKEJELTkz7Iinkhb1+S7AAGkIKl0VGXL1AAAAAElFTkSuQmCC');
+  }
+
+  .star-empty {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat; /** 不重复*/
+    background-size: contain;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAYAAAARfGZ1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjhCNEVFQzkyNERDMTFFMzg2NUE5M0YwNEI4QUQ0OTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjhCNEVFQ0EyNERDMTFFMzg2NUE5M0YwNEI4QUQ0OTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGOEI0RUVDNzI0REMxMUUzODY1QTkzRjA0QjhBRDQ5NCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGOEI0RUVDODI0REMxMUUzODY1QTkzRjA0QjhBRDQ5NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pnh52j4AAACvSURBVHjavFVbDoAgDLPG65gY738FH9EDTSX6gzA2Nu0naFu6ErBMWyMFncAJ6fdto4CCV04+jH0w/hzgE+eRWPmkwsxTbmF2LnXpFssjWhIukq/zTpp1beYcCZt7p6mWUjiQwyiQmwlaaa2UQCpz8iJOtQVexLkqwoOY6zmsxKYbarn+5NH3350TkyuYeVCtc9QMvKtpQbRHoliu172ijsj8/47l3lf3POINOAQYAH4XMyV8FCfCAAAAAElFTkSuQmCC');
+  }
+
+  .left-star {
+    display: flex;
+    flex: 1;
+    height: 30px;
+  }
+
+  .right-star {
+    display: flex;
+    flex: 1;
+  }
+
+  .star-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+</style>
+
+<template>
+  <view class="container">
+    <!--身份选择-->
+    <view class="commit-title">
+      <text>身份选择：</text>
+    </view>
+    <view class="choose-side">
+      <block wx:if="{{side === 0}}">
+        <button class="choose-side-btn selected" @tap="onSide(0)">医院</button>
+      </block>
+      <block wx:else>
+        <button class="choose-side-btn" @tap="onSide(0)">医院</button>
+      </block>
+      <block wx:if="{{side === 1}}">
+        <button class="choose-side-btn selected" @tap="onSide(1)">病人</button>
+      </block>
+      <block wx:else>
+        <button class="choose-side-btn" @tap="onSide(1)">病人</button>
+      </block>
+      <block wx:if="{{side === 2}}">
+        <button class="choose-side-btn selected" @tap="onSide(2)">家属</button>
+      </block>
+      <block wx:else>
+        <button class="choose-side-btn" @tap="onSide(2)">家属</button>
+      </block>
+    </view>
+    <!--评分-->
+    <view class="commit-title">
+      <text>评分：</text>
+    </view>
+    <repeat for="{{questions}}" index="questionIndex">
+      <view class="commit-cell">
+        <text class="question">{{item}}</text>
+        <view class="star-wrapper">
+          <repeat for="{{[0,1,2,3,4]}}" index="starIndex">
+            <block wx:if="{{answers[questionIndex] - starIndex >= 1}}">
+              <view class="star-full">
+                <view class="left-star" @tap="onStar({{questionIndex}}, {{starIndex}}, {{'left'}})"></view>
+                <view class="right-star" @tap="onStar({{questionIndex}}, {{starIndex}}, {{'right'}})"></view>
+              </view>
+            </block>
+            <block wx:elif="{{answers[questionIndex] - starIndex === 0.5}}">
+              <view class="star-half">
+                <view class="left-star" @tap="onStar({{questionIndex}}, {{starIndex}}, {{'left'}})"></view>
+                <view class="right-star" @tap="onStar({{questionIndex}}, {{starIndex}}, {{'right'}})"></view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="star-empty">
+                <view class="left-star" @tap="onStar({{questionIndex}}, {{starIndex}}, {{'left'}})"></view>
+                <view class="right-star" @tap="onStar({{questionIndex}}, {{starIndex}}, {{'right'}})"></view>
+              </view>
+            </block>
+          </repeat>
+        </view>
+      </view>
+    </repeat>
+    <!--建议-->
+    <view class="commit-title">
+      <text>建议:</text>
+    </view>
+    <textarea class="tips-input" @input="onTipsInput"/>
+    <button style="margin-bottom: 30px;" @tap="onFinish">提交</button>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Commit extends wepy.page {
+    config = {
+      navigationBarTitleText: '评价'
+    }
+    data = {
+      tips: '',
+      side: 1,
+      questions: [
+        '1.  护工服务时是否每次穿戴整齐，身穿工作服装，佩戴好胸前身份卡。',
+        '2.  护工工作期间是否精神饱满，端庄，大方，面带微笑',
+        '3. 与护工进行交流时，护工是否态度亲切，语气温和',
+        '4.  护工在整体陪护期间是否每次按时到岗，是否有迟到，早退或旷工',
+        '5. 该护工是否对自己所陪护的病人有一定的了解，例如病情与兴趣爱好',
+        '6.  该护工是否在陪护工作期间做与自己工作没有关系的事例如说笑，娱乐，大声喧哗等等',
+        '7.  在指定时间为病人进行翻身，协助病人在久卧床之后活动身体。',
+        '8.  是否能够在自己护理的时间保持病人的床单整洁，按规定时间更换床单，床套等等',
+        '9.  是否做好了病房的保洁工作，保证病房的干净无灰尘。',
+        '10. 是否观察了病人的饮食情况，为饮食欠佳者做好一劝说二喂，并及时向医院方面进行反馈',
+        '11.  是否按时对卧床病人进行个人卫生的清洁，是否耐心协助可生活自理的病人洗澡',
+        '12.  是否在在岗期间坚守岗位，巡视病房仔细，不坐办公室，不打瞌睡，不脱岗，做好巡视记录。',
+        '13.  协助病人上下床，坐轮椅，遵照医嘱为病人活动四肢。',
+        '14. 是否对病人关心，能够及时发现病人的突发情况并通知医生或者护士进行处理',
+        '15. 是否认真完成本职工作，服从科主任，护士的管理，不对医疗方面进行任何的插手与干扰',
+        '16.  是否管理好所服务的病人的私人物品，不乱放，按病人要求进行整理',
+        '17. 是否做到有四星，即：爱心，关心，热心，耐心，为病人提供优质安全的服务',
+        '18. 具有乐观，开朗，稳定的情绪，坦诚，宽容，豁达的胸怀，有足够的适应能力，具有良好的人际沟通与交往能力。'
+      ],
+      answers: [],
+      carerID: 0
+    }
+
+    onLoad(option) {
+      this.carerID = parseInt(option.carerID)
+      let tempArr = []
+      for (let i = 0; i < 18; i++) {
+        tempArr.push(0)
+      }
+      this.answers = tempArr
+    }
+
+    methods = {
+      onStar(questionIndex, starIndex, half) {
+        console.log(questionIndex + '-' + starIndex)
+        if (half === 'left') {
+          this.answers[questionIndex] = starIndex + 0.5
+        } else if (half === 'right') {
+          this.answers[questionIndex] = starIndex + 1
+        }
+      },
+      onSide(side) {
+        this.side = parseInt(side)
+      },
+      onTipsInput(e) {
+        this.tips = e.detail.value
+      },
+      async onFinish() {
+        const token = wx.getStorageSync('token')
+        let scores = this.answers.join(',')
+        let res = await wepy.request({
+          url: 'http://lovehyh.swiftwhale.cn/api/v1/user/commit/',
+          method: 'POST',
+          data: {
+            token: token,
+            carer_id: this.carerID,
+            tip: this.tips,
+            side: this.side,
+            scores: scores
+          }
+        })
+        if (res.statusCode !== 200) {
+          wx.showToast({
+            title: res.data.detail,
+            icon: 'none'
+          })
+          return
+        }
+        wx.showToast({
+          title: '评价成功'
+        })
+        setTimeout(() => {
+          wx.navigateBack()
+        }, 1000)
+      }
+    }
+  }
+
+</script>

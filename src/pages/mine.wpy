@@ -1,0 +1,86 @@
+<style>
+  .header {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+  }
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin-left: 20px;
+  }
+  .username {
+    margin-left: 20px;
+  }
+  .split-line {
+    width: 90%;
+  }
+</style>
+
+<template>
+  <view class="container">
+    <view class="header">
+      <image class="avatar" src="../assets/awucat.jpg"/>
+      <view class="username">{{username}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="cell" @tap="onSuggestion">
+      <text>用户反馈</text>
+    </view>
+    <view class="split-line"></view>
+    <view class="cell" @tap="onResetPassword">
+      <text>重置密码</text>
+    </view>
+    <view class="split-line"></view>
+    <view class="cell" @tap="onChangeHospital">
+      <text>切换医院</text>
+    </view>
+    <view class="split-line"></view>
+    <view class="cell" @tap="onLogout">
+      <text>退出登录</text>
+    </view>
+    <view class="split-line"></view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Mine extends wepy.page {
+    data = {
+      username: ''
+    }
+    methods = {
+      onChangeHospital() {
+        wx.navigateTo({
+          url: 'hospital'
+        })
+      },
+      onSuggestion() {
+        wx.navigateTo({
+          url: 'suggestion'
+        })
+      },
+      onLogout() {
+        wx.removeStorageSync('token')
+        wx.removeStorageSync('user')
+        wx.removeStorageSync('hospital_id')
+        wx.redirectTo({
+          url: 'login'
+        })
+      },
+      onResetPassword() {
+        wx.navigateTo({
+          url: 'resetPassword'
+        })
+      }
+    }
+    onShow() {
+      const user = wx.getStorageSync('user')
+      this.username = user.username
+    }
+  }
+
+</script>

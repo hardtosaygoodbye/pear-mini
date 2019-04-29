@@ -43,6 +43,7 @@
 <template>
   <view class="container">
     <view class="login-body">
+      <text>护工评价管理系统</text>
       <image class="logo" src="../assets/awucat.jpg"/>
       <input class="login-input" placeholder="用户名" @input="onUserNameInput"/>
       <view class="split-line"></view>
@@ -97,13 +98,23 @@
           icon: 'none'
         })
         wx.setStorageSync('token', res.data.token)
+        wx.setStorageSync('user', res.data.user)
         wx.navigateTo({
-          url: 'suggestion'
+          url: 'hospital'
         })
       },
       onSignUp() {
         wx.navigateTo({
           url: 'signUp'
+        })
+      }
+    }
+    onLoad() {
+      const token = wx.getStorageSync('token')
+      const hospitalID = wx.getStorageSync('hospital_id')
+      if (token && hospitalID) {
+        wx.switchTab({
+          url: 'carer'
         })
       }
     }

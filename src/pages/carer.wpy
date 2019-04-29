@@ -1,10 +1,25 @@
 <style>
+  .cell {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  .commit {
+    margin-top: 0;
+    margin-right: 40px;
+    width: 70px;
+    height: 30px;
+  }
 </style>
 <template>
   <view class="container">
     <repeat for="{{carerList}}">
-      <view class="cell">{{item.name}}</view>
+      <view class="cell" @tap="onCommit({{index}})">
+        <text>{{item.name}}</text>
+        <button class="commit">评价</button>
+      </view>
     </repeat>
   </view>
 </template>
@@ -19,8 +34,8 @@
       carerList: []
     }
 
-    async onLoad(option) {
-      const hospitalId = option.hospital_id
+    async onShow() {
+      const hospitalId = wx.getStorageSync('hospital_id')
       let res = await wepy.request({
         url: 'http://lovehyh.swiftwhale.cn/api/v1/user/carer/',
         data: {
@@ -35,6 +50,15 @@
       }
       this.carerList = res.data.carers
       this.$apply()
+    }
+
+    methods = {
+      onCommit(index) {
+        console.log(index)
+        wx.navigateTo({
+          url: 'commit?carerID=' + this.carerList[index].id
+        })
+      }
     }
   }
 </script>

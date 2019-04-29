@@ -39,8 +39,9 @@
 
     methods = {
       onCell(index) {
-        wx.navigateTo({
-          url: 'carer?hospital_id=' + this.hospitalList[index].id
+        wx.setStorageSync('hospital_id', this.hospitalList[index].id)
+        wx.switchTab({
+          url: 'carer'
         })
       }
     }
